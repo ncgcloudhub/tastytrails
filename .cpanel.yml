@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/triotbdw/tastytrails
+    - /bin/cp -R * $DEPLOYPATH
