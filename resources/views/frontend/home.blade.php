@@ -8,47 +8,23 @@
 	<!-- Start slides -->
 	<div id="slides" class="cover-slides">
 		<ul class="slides-container">
+			@foreach ($banners as $item)
+				
 			<li class="text-left">
-				<img src="{{ asset('frontend/images/slider-01.jpg') }}" alt="">
+				<img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
 
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Tasty Trails	Restaurant</strong></h1>
-							<p class="m-b-40"> Explore a world of delicious adventures at Tasty Trails. Crafted with fresh, seasonal ingredients, our vibrant menu promises an unforgettable journey for your taste buds.</p>
+							<h1 class="m-b-20"><strong>{{$item->title}}</strong></h1>
+							<p class="m-b-40">{{$item->description}}.</p>
 							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
 						</div>
 					</div>
 				</div>
 			</li>
-			<li class="text-left">
-				<img src="/frontend/images/slider-02.jpg" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Tasty Trails
-							</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view  <br> 
-							trends to see any changes in performance over time.</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li class="text-left">
-				<img src="/frontend/images/slider-03.jpg" alt="">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>Welcome To <br> Tasty Trails
-							</strong></h1>
-							<p class="m-b-40">See how your users experience your website in realtime or view  <br> 
-							trends to see any changes in performance over time.</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
-						</div>
-					</div>
-				</div>
-			</li>
+		
+			@endforeach
 		</ul>
 		<div class="slides-navigation">
 			<a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>

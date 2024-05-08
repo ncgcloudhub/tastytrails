@@ -44,7 +44,7 @@
                   {{-- Fixed Template --}}
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="">
+                    <a class="nav-link menu-link" href="{{route('manage.banner')}}">
                         <i class=" las la-user-circle"></i> <span >Banner</span>
                     </a>
                 </li>
