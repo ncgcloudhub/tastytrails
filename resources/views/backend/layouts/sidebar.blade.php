@@ -31,24 +31,88 @@
             <div id="two-column-menu">
             </div>
             <ul class="navbar-nav" id="navbar-nav">
+                <li class="menu-title"><span>@lang('translation.menu')</span></li>
+
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i data-feather="home" class="icon-dual"></i> <span>@lang('translation.dashboards')</span>
+                    <a class="nav-link menu-link" href="{{route('admin.dashboard')}}">
+                        <i data-feather="home" class="icon-dual"></i> <span >Dashboard</span>
                     </a>
-                    <div class="collapse menu-dropdown" id="sidebarDashboards">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link menu-link" href="{{route('site.settings.add')}}">
-                                    <i class="las la-flask"></i> <span >Site Settings</span>
-                                </a>
-                            </li>
-                           
-                           
-                        </ul>
+                </li>
+
+                <li class="menu-title"><i class="ri-more-fill"></i> <span >Pages</span></li>
+
+                  {{-- Fixed Template --}}
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="">
+                        <i class=" las la-user-circle"></i> <span >Banner</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="">
+                        <i class=" las la-user-circle"></i> <span >About Us</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="">
+                        <i class=" las la-user-circle"></i> <span >Menu</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="">
+                        <i class=" las la-user-circle"></i> <span >Gallery</span>
+                    </a>
+                </li>
+     
+            
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="">
+                        <i class=" las la-user-circle"></i> <span >Reservation</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="">
+                        <i class=" las la-user-circle"></i> <span >Stuff</span>
+                    </a>
+                </li>
+
+                <li class="menu-title"><i class="ri-more-fill"></i> <span >Settings</span></li>
+               
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="AITools">
+                        <i class="las la-cog"></i> <span >Settings</span>
+                    </a>
+                    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <ul class="nav nav-sm flex-column">
+
+                                
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link" >Site Settings</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="" class="nav-link" >SEO Settings</a>
+                                    </li>
+                                    
+                                  
+                                 
+                                </ul>
+                            </div>
+                            
+                            
+                        </div>
                     </div>
-                </li> <!-- end Dashboard Menu -->
-             
-            </ul>
+                </li>
+    
+         </ul>
         </div>
         <!-- Sidebar -->
     </div>
