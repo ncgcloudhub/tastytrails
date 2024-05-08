@@ -21,4 +21,29 @@ class FrontEndController extends Controller
     {
         return view('frontend.about');
     }
+
+    public function gallery()
+    {
+        return view('frontend.gallery');
+    }
+
+    public function stuff()
+    {
+        return view('frontend.stuff');
+    }
+
+    public function reservation()
+    {
+        return view('frontend.reservation');
+    }
+
+    public function contact()
+    {
+        return view('frontend.contact');
+    }
+
+    public function blog()
+    {
+        return view('frontend.blog');
+    }
 }

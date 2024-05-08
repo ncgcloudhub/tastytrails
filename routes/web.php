@@ -21,6 +21,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontEndController::class, 'home'])->name('home');
 Route::get('/menu', [FrontEndController::class, 'menu'])->name('menu');
 Route::get('/about', [FrontEndController::class, 'about'])->name('about');
+Route::get('/gallery', [FrontEndController::class, 'gallery'])->name('gallery');
+Route::get('/stuff', [FrontEndController::class, 'stuff'])->name('stuff');
+Route::get('/reservation', [FrontEndController::class, 'reservation'])->name('reservation');
+Route::get('/contact', [FrontEndController::class, 'contact'])->name('contact');
+Route::get('/blog', [FrontEndController::class, 'blog'])->name('blog');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

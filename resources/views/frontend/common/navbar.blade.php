@@ -12,22 +12,22 @@
                     <li class="nav-item {{ Request::route()->named('home') ? 'active' : '' }}"><a class="nav-link" href="{{route('home')}}">Home</a></li>
                     <li class="nav-item {{ Request::route()->named('menu') ? 'active' : '' }}"><a class="nav-link" href="{{route('menu')}}">Menu</a></li>
                     <li class="nav-item {{ Request::route()->named('about') ? 'active' : '' }}"><a class="nav-link" href="{{route('about')}}">About</a></li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown {{ Request::route()->named(['reservation', 'stuff', 'gallery']) ? 'active' : '' }}">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="reservation.html">Reservation</a>
-                            <a class="dropdown-item" href="stuff.html">Stuff</a>
-                            <a class="dropdown-item" href="gallery.html">Gallery</a>
+                            <a class="dropdown-item" href="{{route('reservation')}}">Reservation</a>
+                            <a class="dropdown-item" href="{{route('stuff')}}">Stuff</a>
+                            <a class="dropdown-item" href="{{route('gallery')}}">Gallery</a>
                         </div>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown-a" data-toggle="dropdown">Blog</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown-a">
-                            <a class="dropdown-item" href="blog.html">blog</a>
+                            <a class="dropdown-item" href="{{route('blog')}}">blog</a>
                             <a class="dropdown-item" href="blog-details.html">blog Single</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item {{ Request::route()->named('contact') ? 'active' : '' }}"><a class="nav-link" href="{{route('contact')}}">Contact</a></li>
                 </ul>
             </div>
         </div>

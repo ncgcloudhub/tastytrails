@@ -14,7 +14,7 @@
     <meta name="author" content="">
 
    <!-- Site Icons -->
-<link rel="shortcut icon" href="{{ asset('frontend/images/favicon.ico') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}" type="image/x-icon">
 <link rel="apple-touch-icon" href="{{ asset('frontend/images/apple-touch-icon.png') }}">
 
 <!-- Bootstrap CSS -->
@@ -28,6 +28,10 @@
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+
+<link rel="stylesheet" href="{{ asset('frontend/css/classic.css') }}">  
+<link rel="stylesheet" href="{{ asset('frontend/css/classic.date.css') }}">  
+<link rel="stylesheet" href="{{ asset('frontend/css/classic.time.css') }}">  
 
 
     <!--[if lt IE 9]>
