@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
 {
     public function home()
     {
-        return view('frontend.home');
+        $banners = Banner::latest()->limit(3)->get();
+        return view('frontend.home', compact('banners'));
     }
 
     public function menu()

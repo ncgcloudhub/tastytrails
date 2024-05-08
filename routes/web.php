@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\Frontend\FrontEndController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteSettingsController;
@@ -77,3 +78,9 @@ Route::prefix('settings/site')->group(function () {
 // GOOGLE SOCIALITE
 Route::get('google/login', [UserController::class, 'provider'])->name('google.login');
 Route::get('google/callback', [UserController::class, 'callbackHandel'])->name('google.login.callback');
+
+
+// Banner
+Route::get('/add/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
+
+Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('banner.store');
