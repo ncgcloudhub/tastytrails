@@ -81,6 +81,7 @@ Route::get('google/callback', [UserController::class, 'callbackHandel'])->name('
 
 
 // Banner
-Route::get('/add/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
+Route::get('/manage/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
+Route::get('/add/banner', [BannerController::class, 'AddBanner'])->name('add.banner');
 
 Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('banner.store');
