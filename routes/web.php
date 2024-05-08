@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\FrontEndController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutUsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -45,6 +46,15 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Admin Routes
     Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+
+    // Add About Us From
+    Route::get('/about/us', [AboutUsController::class, 'ManageAboutUs'])->name('manage.about.us');
+
+    Route::post('/about/us/store', [AboutUsController::class, 'StoreAboutUs'])->name('store.about.us');
+
+    Route::get('/about/us/edit/{id}', [AboutUsController::class, 'EditAboutUs'])->name('edit.about.us');
+
+    Route::post('/about/us/update', [AboutUsController::class, 'UpdateAboutUs'])->name('update.about.us');
 }); //End Admin Middleware
 
 

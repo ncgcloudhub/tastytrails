@@ -45,38 +45,38 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="">
-                        <i class=" las la-user-circle"></i> <span >Banner</span>
+                        <i class="las la-book-open"></i> <span >Banner</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('manage.about.us')}}">
+                        <i class="las la-paperclip"></i> <span >About Us</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="">
-                        <i class=" las la-user-circle"></i> <span >About Us</span>
+                        <i class="las la-hamburger"></i> <span >Menu</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="">
-                        <i class=" las la-user-circle"></i> <span >Menu</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="">
-                        <i class=" las la-user-circle"></i> <span >Gallery</span>
+                        <i class="las la-image"></i> <span >Gallery</span>
                     </a>
                 </li>
      
             
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="">
-                        <i class=" las la-user-circle"></i> <span >Reservation</span>
+                        <i class="las la-address-card"></i> <span >Reservation</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="">
-                        <i class=" las la-user-circle"></i> <span >Stuff</span>
+                        <i class="las la-user-circle"></i> <span >Stuff</span>
                     </a>
                 </li>
 
