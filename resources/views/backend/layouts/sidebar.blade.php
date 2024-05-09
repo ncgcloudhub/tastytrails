@@ -41,23 +41,32 @@
 
                 <li class="menu-title"><i class="ri-more-fill"></i> <span >Pages</span></li>
 
-                  <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('manage.banner')}}">
-                        <i class=" las la-user-circle"></i> <span >Banner</span>
-                    </a>
-                </li>
 
-                  <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('manage.menu.category')}}">
-                        <i class=" las la-user-circle"></i> <span >Menu Category</span>
-                    </a>
-                </li>
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('manage.menu')}}">
-                        <i class=" las la-user-circle"></i> <span >Menu</span>
+                    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="AITools">
+                        <i class=" las la-clipboard-list"></i> <span >Banner</span>
                     </a>
+                    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{route('add.banner')}}" class="nav-link" >Add Banner</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{route('manage.banner')}}" class="nav-link" >Manage Banner</a>
+                                    </li>
+                
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
                 </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('manage.about.us')}}">
@@ -65,11 +74,31 @@
                     </a>
                 </li>
 
+    
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="">
+                    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="AITools">
                         <i class="las la-hamburger"></i> <span >Menu</span>
                     </a>
+                    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{route('manage.menu.category')}}" class="nav-link" >Menu Category</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{route('manage.menu')}}" class="nav-link" >Menu</a>
+                                    </li>
+                
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
                 </li>
+
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('add.gallery')}}">
@@ -77,19 +106,6 @@
                     </a>
                 </li>
      
-            
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="">
-                        <i class="las la-address-card"></i> <span >Reservation</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="">
-                        <i class="las la-user-circle"></i> <span >Stuff</span>
-                    </a>
-                </li>
-
                 <li class="menu-title"><i class="ri-more-fill"></i> <span >Settings</span></li>
                
                 <li class="nav-item">
