@@ -7,8 +7,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\SiteSettingController;
 use App\Models\MenuCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -59,6 +59,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/about/us/edit/{id}', [AboutUsController::class, 'EditAboutUs'])->name('edit.about.us');
 
     Route::post('/about/us/update', [AboutUsController::class, 'UpdateAboutUs'])->name('update.about.us');
+
+    // Gallery From
+    Route::get('/gallery/add', [GalleryController::class, 'AddGallery'])->name('add.gallery');
+
+    Route::post('/gallery/store', [GalleryController::class, 'StoreGallery'])->name('store.gallery');
+
+    Route::get('/gallery/edit/{id}', [GalleryController::class, 'EditGallery'])->name('edit.gallery');
+
+    Route::post('/gallery/update', [GalleryController::class, 'UpdateGallery'])->name('update.gallery');
+
+    Route::get('/gallery/delete/{id}', [GalleryController::class, 'DeleteGallery'])->name('delete.gallery');
 }); //End Admin Middleware
 
 
@@ -87,7 +98,3 @@ Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory']
 // Menu
 Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
 Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
-
-// SiteSettings
-Route::get('/site/settings/manage', [SiteSettingController::class, 'SitesettingsAdd'])->name('site.settings.add');
-Route::post('/update-settings', [SiteSettingController::class, 'SitesettingsStore'])->name('update.settings');

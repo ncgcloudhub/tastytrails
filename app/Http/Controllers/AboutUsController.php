@@ -14,7 +14,7 @@ class AboutUsController extends Controller
     public function ManageAboutUs()
     {
         $about_us = AboutUs::orderBy('id', 'asc')->get();
-        return view('backend.about.add_about_us', compact('about_us'));
+        return view('backend.about.manage_about_us', compact('about_us'));
     }
 
     public function StoreAboutUs(Request $request)

@@ -3,8 +3,8 @@
 
 @section('content')
 @component('backend.components.breadcrumb')
-@slot('li_1')  Privacy Policy @endslot
-@slot('title') Manage @endslot
+@slot('li_1')  About Us @endslot
+@slot('title') Edit @endslot
 @endcomponent
 
 
@@ -12,7 +12,7 @@
     <div class="col-xxl-6">
         <div class="card">
             <div class="card-header">
-                <h5 class="card-title mb-0">Manage Privacy Policy</h5>
+                <h5 class="card-title mb-0">Manage About Us</h5>
             </div>
             <div class="card-body">
                 <table id="alternative-pagination" class="table responsive align-middle table-hover table-bordered" style="width:100%">
@@ -68,7 +68,7 @@
             <input type="hidden" name="id" value="{{$about_uss->id}}">
         <div class="card">
             <div class="card-header align-items-center d-flex">
-                <h4 class="card-title mb-0 flex-grow-1">Edit About US</h4>
+                <h4 class="card-title mb-0 flex-grow-1">Edit About Us</h4>
             </div><!-- end card header -->
     
             <div class="card-body">
