@@ -62,7 +62,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="">
+                    <a class="nav-link menu-link" href="{{route('add.gallery')}}">
                         <i class="las la-image"></i> <span >Gallery</span>
                     </a>
                 </li>
