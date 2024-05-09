@@ -18,7 +18,7 @@
     <!-- End All Pages -->
 
     <!-- Start Contact -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.934249028045!2d90.43721577617899!3d23.749723988800696!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8103c66063d%3A0xe3305bf2cb46be7c!2sTasty%20Trails!5e0!3m2!1sen!2sbd!4v1715152709904!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2921.219221625981!2d-78.8912178234744!3d42.931505098807584!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d3132671c729cb%3A0x2bec4a07e9f61d16!2s643%20Grant%20St%2C%20Buffalo%2C%20NY%2014213%2C%20USA!5e0!3m2!1sen!2sbd!4v1715177240237!5m2!1sen!2sbd" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
    
     <div class="contact-box">
       <div class="container">
