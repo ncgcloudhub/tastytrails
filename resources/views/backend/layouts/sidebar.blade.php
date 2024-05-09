@@ -41,11 +41,21 @@
 
                 <li class="menu-title"><i class="ri-more-fill"></i> <span >Pages</span></li>
 
-                  {{-- Fixed Template --}}
-
                   <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('manage.banner')}}">
                         <i class=" las la-user-circle"></i> <span >Banner</span>
+                    </a>
+                </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('manage.menu.category')}}">
+                        <i class=" las la-user-circle"></i> <span >Menu Category</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('manage.menu')}}">
+                        <i class=" las la-user-circle"></i> <span >Menu</span>
                     </a>
                 </li>
 

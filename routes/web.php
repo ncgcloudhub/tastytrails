@@ -7,6 +7,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutUsController;
+use App\Http\Controllers\MenuController;
+use App\Models\MenuCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -79,9 +81,15 @@ Route::prefix('settings/site')->group(function () {
 Route::get('google/login', [UserController::class, 'provider'])->name('google.login');
 Route::get('google/callback', [UserController::class, 'callbackHandel'])->name('google.login.callback');
 
-
 // Banner
 Route::get('/manage/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
 Route::get('/add/banner', [BannerController::class, 'AddBanner'])->name('add.banner');
-
 Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('banner.store');
+
+// Menu Category
+Route::get('/manage/menu/category', [MenuController::class, 'manageMenuCategory'])->name('manage.menu.category');
+Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory'])->name('menu.category.store');
+
+// Menu
+Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
+Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
