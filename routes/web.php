@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
+use App\Models\MenuCategory;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,13 +81,6 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard');
 }); //End User Middleware
 
-// Site Settings
-Route::prefix('settings/site')->group(function () {
-
-    Route::get('/add', [SiteSettingsController::class, 'SitesettingsAdd'])->name('site.settings.add');
-
-    Route::post('/store', [SiteSettingsController::class, 'SitesettingsStore'])->name('site.settings.store');
-});
 
 // GOOGLE SOCIALITE
 Route::get('google/login', [UserController::class, 'provider'])->name('google.login');

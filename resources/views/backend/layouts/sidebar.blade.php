@@ -121,7 +121,7 @@
                                 
 
                                     <li class="nav-item">
-                                        <a href="" class="nav-link" >Site Settings</a>
+                                        <a href="{{route('site.settings.add')}}" class="nav-link" >Site Settings</a>
                                     </li>
 
                                     <li class="nav-item">
