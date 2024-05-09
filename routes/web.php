@@ -8,6 +8,7 @@ use App\Http\Controllers\SiteSettingsController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\SiteSettingController;
 use App\Models\MenuCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -69,13 +70,6 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'UserDashboard'])->name('user.dashboard');
 }); //End User Middleware
 
-// Site Settings
-Route::prefix('settings/site')->group(function () {
-
-    Route::get('/add', [SiteSettingsController::class, 'SitesettingsAdd'])->name('site.settings.add');
-
-    Route::post('/store', [SiteSettingsController::class, 'SitesettingsStore'])->name('site.settings.store');
-});
 
 // GOOGLE SOCIALITE
 Route::get('google/login', [UserController::class, 'provider'])->name('google.login');
@@ -93,3 +87,7 @@ Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory']
 // Menu
 Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
 Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
+
+// SiteSettings
+Route::get('/site/settings/manage', [SiteSettingController::class, 'SitesettingsAdd'])->name('site.settings.add');
+Route::post('/update-settings', 'SettingsController@update')->name('update.settings');

@@ -14,7 +14,7 @@
 @endcomponent
 
 <div class="col-xxl-6">
-    <form method="POST" action="{{route('site.settings.store')}}" class="row g-3" enctype="multipart/form-data">
+    <form method="POST" action="#" class="row g-3" enctype="multipart/form-data">
         @csrf
     <div class="card">
         <div class="card-header align-items-center d-flex">
@@ -46,6 +46,7 @@
                                 <p></p>
                             @endif
                         </div>
+
                     </div>
                     <!-- end card body -->
                 </div>
@@ -57,7 +58,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <h4 class="card-title mb-0">Header Logo when Background is Light</h4>
+                            <h4 class="card-title mb-0">Logo</h4>
                         </div><!-- end card header -->
                 
                         <div class="card-body">
@@ -65,94 +66,43 @@
                             <div class="avatar-xl mx-auto">
                                 <input type="file"
                                 class="filepond filepond-input-circle"
-                                name="header_logo_light"
+                                name="logo"
                                 accept="image/png, image/jpeg, image/gif"/>
                             </div>
                             <!-- Display current favicon image -->
                             <div class="mt-3">
-                                @if($setting->header_logo_light)
+                                {{-- @if($setting->header_logo_light)
                                     <img style="border-radius: 50%" src="{{ asset('backend/uploads/site/' . $setting->header_logo_light) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
                                 @else
                                     <p></p>
-                                @endif
+                                @endif --}}
                             </div>
                 
                         </div>
                         <!-- end card body -->
                     </div>
 
-            
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title mb-0">Header Logo when Background is Dark</h4>
-                        </div><!-- end card header -->
-                
-                        <div class="card-body">
-                          
-                            <div class="avatar-xl mx-auto">
-                                <input type="file"
-                                class="filepond filepond-input-circle"
-                                name="header_logo_dark"
-                                accept="image/png, image/jpeg, image/gif"/>
-                            </div>
-
-                            <div class="mt-3">
-                                @if($setting->header_logo_dark)
-                                    <img style="border-radius: 50%" src="{{ asset('backend/uploads/site/' . $setting->header_logo_dark) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
-                                @else
-                                    <p></p>
-                                @endif
-                            </div>
-                
-                        </div>
-                        <!-- end card body -->
-                    </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title mb-0">Banner Image</h4>
-                        </div><!-- end card header -->
-                
-                        <div class="card-body">
-                          
-                            <div class="avatar-xl mx-auto">
-                                <input type="file"
-                                class="filepond filepond-input-circle"
-                                name="banner_img"
-                                accept="image/png, image/jpeg, image/gif"/>
-                            </div>
-                
-                        </div>
-                        <!-- end card body -->
-                    </div>
 
                     <div class="col-md-12">
-                        <label for="Banner Text" class="form-label">Banner Text</label>
-                        <input type="text" name="banner_text" class="form-control mb-3" id="banner_text" value="{{$setting->banner_text}}" placeholder="Enter Role">
+                        <label for="Footer Text" class="form-label">Footer Text</label>
+                        <input type="text" name="footer_text" class="form-control mb-3" id="footer_text" value="{{$setting->footer_text}}" placeholder="Enter Role">
                     </div>
-
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title mb-0">Footer Logo</h4>
-                        </div><!-- end card header -->
-                
-                        <div class="card-body">
-                          
-                            <div class="avatar-xl mx-auto">
-                                <input type="file"
-                                class="filepond filepond-input-circle"
-                                name="footer_logo"
-                                accept="image/png, image/jpeg, image/gif"/>
-                            </div>
-                
-                        </div>
-                        <!-- end card body -->
+                    <div class="col-md-12">
+                        <label for="phone" class="form-label">Phone</label>
+                        <input type="text" name="phone" class="form-control mb-3" id="phone" value="{{$setting->phone}}" placeholder="Enter Phone">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="text" name="email" class="form-control mb-3" id="email" value="{{$setting->email}}" placeholder="Enter Email">
                     </div>
 
                     <div class="col-md-12">
                         <label for="footer_text" class="form-label">Footer Text</label>
                         <input type="text" name="footer_text" class="form-control mb-3" id="footer_text" value="{{$setting->footer_text}}" placeholder="Enter Role">
+                    </div>
+                    <div class="col-md-12">
+                        <label for="address" class="form-label">Address</label>
+                        <input type="text" name="address" class="form-control mb-3" id="address" value="{{$setting->address}}" placeholder="Enter Address">
                     </div>
 
                     <div class="col-md-12">
