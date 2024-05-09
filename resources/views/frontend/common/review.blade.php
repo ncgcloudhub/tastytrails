@@ -4,7 +4,7 @@
             <div class="col-lg-12">
                 <div class="heading-title text-center">
                     <h2>Customer Reviews</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting</p>
+                    <p>Discover what our patrons have to say about their Tasty Trails experience.</p>
                 </div>
             </div>
         </div>
@@ -17,24 +17,21 @@
                                 <img class="d-block w-100 rounded-circle" src="frontend/images/quotations-button.png" alt="">
                             </div>
                             <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Paul Mitchel</strong></h5>
-                            <h6 class="text-dark m-0">Web Developer</h6>
-                            <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+                            <p class="m-0 pt-3">"Tasty Trails has been my go-to spot for delicious meals with friends. Their menu never disappoints, and the ambiance is always welcoming. Highly recommended!"</p>
                         </div>
                         <div class="carousel-item text-center">
                             <div class="img-box p-1 border rounded-circle m-auto">
                                 <img class="d-block w-100 rounded-circle" src="frontend/images/quotations-button.png" alt="">
                             </div>
                             <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Steve Fonsi</strong></h5>
-                            <h6 class="text-dark m-0">Web Designer</h6>
-                            <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+                            <p class="m-0 pt-3">"As someone who appreciates fine dining, Tasty Trails has exceeded my expectations. From the delectable dishes to the impeccable service, every visit is a culinary delight!"</p>
                         </div>
                         <div class="carousel-item text-center">
                             <div class="img-box p-1 border rounded-circle m-auto">
                                 <img class="d-block w-100 rounded-circle" src="frontend/images/quotations-button.png" alt="">
                             </div>
-                            <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel vebar</strong></h5>
-                            <h6 class="text-dark m-0">Seo Analyst</h6>
-                            <p class="m-0 pt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor, varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel, semper malesuada ante. Idac bibendum scelerisque non non purus. Suspendisse varius nibh non aliquet.</p>
+                            <h5 class="mt-4 mb-0"><strong class="text-warning text-uppercase">Daniel Vebar</strong></h5>
+                            <p class="m-0 pt-3">"Tasty Trails has become my favorite spot for family gatherings. Their warm atmosphere and mouthwatering dishes make every celebration memorable. Can't recommend it enough!"</p>
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#reviews" role="button" data-slide="prev">
