@@ -4,7 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\Frontend\FrontEndController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SiteSettingsController;
+use App\Http\Controllers\SiteSettingController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\GalleryController;
@@ -70,6 +70,26 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/gallery/update', [GalleryController::class, 'UpdateGallery'])->name('update.gallery');
 
     Route::get('/gallery/delete/{id}', [GalleryController::class, 'DeleteGallery'])->name('delete.gallery');
+
+    // Site Settings
+    Route::prefix('settings/site')->group(function () {
+
+        Route::get('/add', [SiteSettingController::class, 'SitesettingsAdd'])->name('site.settings.add');
+        Route::post('/store', [SiteSettingController::class, 'SitesettingsStore'])->name('update.settings');
+    });
+
+    // Banner
+    Route::get('/manage/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
+    Route::get('/add/banner', [BannerController::class, 'AddBanner'])->name('add.banner');
+    Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('banner.store');
+
+    // Menu Category
+    Route::get('/manage/menu/category', [MenuController::class, 'manageMenuCategory'])->name('manage.menu.category');
+    Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory'])->name('menu.category.store');
+
+    // Menu
+    Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
+    Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
 }); //End Admin Middleware
 
 
@@ -85,16 +105,3 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 // GOOGLE SOCIALITE
 Route::get('google/login', [UserController::class, 'provider'])->name('google.login');
 Route::get('google/callback', [UserController::class, 'callbackHandel'])->name('google.login.callback');
-
-// Banner
-Route::get('/manage/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
-Route::get('/add/banner', [BannerController::class, 'AddBanner'])->name('add.banner');
-Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('banner.store');
-
-// Menu Category
-Route::get('/manage/menu/category', [MenuController::class, 'manageMenuCategory'])->name('manage.menu.category');
-Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory'])->name('menu.category.store');
-
-// Menu
-Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
-Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');

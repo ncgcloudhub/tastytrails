@@ -41,7 +41,7 @@
                         <!-- Display current favicon image -->
                         <div class="mt-3">
                             @if($setting->favicon)
-                                <img style="border-radius: 50%" src="{{ asset('backend/uploads/site/' . $setting->favicon) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
+                                <img style="border-radius: 50%" src="{{ asset('storage/app/public/upload/site/' . $setting->favicon) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
                             @else
                                 <p></p>
                             @endif
