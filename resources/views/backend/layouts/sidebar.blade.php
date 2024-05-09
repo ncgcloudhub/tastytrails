@@ -44,11 +44,11 @@
 
 
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button"
+                    <a class="nav-link menu-link" href="#banner" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="AITools">
                         <i class=" las la-clipboard-list"></i> <span >Banner</span>
                     </a>
-                    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
+                    <div class="collapse menu-dropdown mega-dropdown-menu" id="banner">
                         <div class="row">
                             <div class="col-lg-4">
                                 <ul class="nav nav-sm flex-column">
@@ -76,11 +76,11 @@
 
     
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#settings" data-bs-toggle="collapse" role="button"
+                    <a class="nav-link menu-link" href="#menu" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="AITools">
                         <i class="las la-hamburger"></i> <span >Menu</span>
                     </a>
-                    <div class="collapse menu-dropdown mega-dropdown-menu" id="settings">
+                    <div class="collapse menu-dropdown mega-dropdown-menu" id="menu">
                         <div class="row">
                             <div class="col-lg-4">
                                 <ul class="nav nav-sm flex-column">
