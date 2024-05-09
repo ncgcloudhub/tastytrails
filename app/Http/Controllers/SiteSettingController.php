@@ -34,12 +34,12 @@ class SiteSettingController extends Controller
 
     // Handle file uploads (favicon and logo)
     if ($request->hasFile('favicon')) {
-        $favicon = $request->file('favicon')->store('public/uploads/site');
+        $favicon = $request->file('favicon')->store('public/upload/site');
         $setting->favicon = basename($favicon);
     }
 
     if ($request->hasFile('logo')) {
-        $logo = $request->file('logo')->store('public/uploads/site');
+        $logo = $request->file('logo')->store('public/upload/site');
         $setting->logo = basename($logo);
     }
 

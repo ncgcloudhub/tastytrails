@@ -14,7 +14,7 @@
 @endcomponent
 
 <div class="col-xxl-6">
-    <form method="POST" action="#" class="row g-3" enctype="multipart/form-data">
+    <form method="POST" action="{{route('update.settings')}}" class="row g-3" enctype="multipart/form-data">
         @csrf
     <div class="card">
         <div class="card-header align-items-center d-flex">

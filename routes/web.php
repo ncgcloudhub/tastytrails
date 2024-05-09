@@ -90,4 +90,4 @@ Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.sto
 
 // SiteSettings
 Route::get('/site/settings/manage', [SiteSettingController::class, 'SitesettingsAdd'])->name('site.settings.add');
-Route::post('/update-settings', 'SettingsController@update')->name('update.settings');
+Route::post('/update-settings', [SiteSettingController::class, 'SitesettingsStore'])->name('update.settings');

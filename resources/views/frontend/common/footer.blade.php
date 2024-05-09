@@ -78,7 +78,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="company-name">All Rights Reserved. &copy; 2024 <a href="#">Tasty Trails
+                    <p class="company-name">{{ $siteSettings->footer_text }}. &copy; 2024 <a href="#">Tasty Trails
                     </a> Design By : 
                 TrionxAI</p>
                 </div>
