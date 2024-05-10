@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
+use App\Http\Controllers\ModeratorController;
 use App\Models\MenuCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -97,6 +98,11 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     // Menu
     Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
     Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
+
+    // Moderator
+    Route::get('/add/moderator', [ModeratorController::class, 'addModerator'])->name('add.moderator');
+    Route::post('/moderator/store', [ModeratorController::class, 'storeModerator'])->name('users.store');
+
 }); //End Admin Middleware
 
 

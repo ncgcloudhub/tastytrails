@@ -25,5 +25,10 @@ class AppServiceProvider extends ServiceProvider
             $siteSettings = SiteSetting::find(1);
             $view->with('siteSettings', $siteSettings);
         });
+
+        View::composer('*', function ($view) {
+            $isAdmin = auth()->check() && auth()->user()->role === 'admin';
+            $view->with('isAdmin', $isAdmin);
+        });
     }
 }
