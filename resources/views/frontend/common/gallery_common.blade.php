@@ -1,6 +1,6 @@
 @php
     $gallery = \App\Models\Gallery::all();
-    $galleryLimit = 6; // Set the default limit
+    $galleryLimit = 9; // Set the default limit
 @endphp
 
 @if(request()->routeIs('home')) {{-- Check if it's the home page --}}

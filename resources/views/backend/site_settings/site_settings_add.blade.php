@@ -41,7 +41,7 @@
                         <!-- Display current favicon image -->
                         <div class="mt-3">
                             @if($setting->favicon)
-                                <img style="border-radius: 50%" src="{{ asset('storage/app/public/upload/site/' . $setting->favicon) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
+                                <img width="50px" src="{{ asset('storage/upload/site/' . $setting->favicon) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
                             @else
                                 <p></p>
                             @endif
@@ -71,11 +71,11 @@
                             </div>
                             <!-- Display current favicon image -->
                             <div class="mt-3">
-                                {{-- @if($setting->header_logo_light)
-                                    <img style="border-radius: 50%" src="{{ asset('backend/uploads/site/' . $setting->header_logo_light) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
+                                @if($setting->logo)
+                                    <img width="150px" src="{{ asset('storage/upload/site/' . $setting->logo) }}" alt="Current Favicon" width="100px" class="img-fluid"/>
                                 @else
                                     <p></p>
-                                @endif --}}
+                                @endif
                             </div>
                 
                         </div>

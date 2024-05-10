@@ -11,8 +11,8 @@ class MenuController extends Controller
     // MENU CATEGORY
     public function manageMenuCategory()
     {
-        $categories = MenuCategory::latest()->get();
-        return view('backend.Menu.manage_menu_category', compact('categories'));
+        $category = MenuCategory::latest()->get();
+        return view('backend.Menu.manage_menu_category', compact('category'));
     }
 
     public function storeMenuCategory(Request $request)
@@ -29,13 +29,68 @@ class MenuController extends Controller
         return redirect()->back()->with('success', 'Menu Category added successfully!');
     }
 
+    public function editMenuCategory($id)
+    {
+        $category = MenuCategory::orderBy('id', 'asc')->get();
+        $categories = MenuCategory::findOrFail($id);
 
-// MENU ----------------------------------------------------------------------------------------------------
+        return view('backend.Menu.edit_menu_category', compact('category', 'categories'));
+    }
+
+
+    public function updateMenuCategory(Request $request)
+    {
+        // Validate the incoming request data
+        $validatedData = $request->validate([
+            'menu_category_name' => 'required|string|max:255',
+        ]);
+
+        // Find the about us record to update
+        $menu_category = MenuCategory::findOrFail($request->id);
+
+        // Update the text fields
+        $menu_category->menu_category_name = $validatedData['menu_category_name'];
+
+        // Save the changes to the about us record
+        $menu_category->save();
+
+        // Redirect the user with a success message
+        $notification = array(
+            'message' => 'Menu Category updated successfully',
+            'alert-type' => 'success'
+        );
+
+        return redirect()->back()->with($notification);
+    }
+
+
+    public function deleteMenuCategory($id)
+    {
+
+        // Find the gallery item
+        $menu_category = MenuCategory::findOrFail($id);
+
+        // Delete the gallery item from the database
+        $menu_category->delete();
+
+        // Redirect back with notification
+        $notification = array(
+            'message' => 'Gallery Deleted Successfully',
+            'alert-type' => 'info'
+        );
+
+        return redirect()->back()->with($notification);
+    } // end method
+
+
+
+
+    // MENU ----------------------------------------------------------------------------------------------------
     public function manageMenu()
     {
         $menus = Menu::latest()->get();
         $categories = MenuCategory::latest()->get();
-        return view('backend.Menu.manage_menu', compact('menus','categories'));
+        return view('backend.Menu.manage_menu', compact('menus', 'categories'));
     }
 
     public function storeMenu(Request $request)
@@ -69,7 +124,4 @@ class MenuController extends Controller
         // Redirect back with a success message
         return redirect()->back()->with('success', 'Item added successfully!');
     }
-
-
-
 }

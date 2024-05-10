@@ -49,18 +49,19 @@
     </div>
 
     <div class="col-xxl-6">
-        <form method="POST" action="{{ route('menu.category.store') }}" class="row g-3">
+        <form method="POST" action="{{ route('update.menu.category') }}" class="row g-3">
             @csrf
+            <input type="hidden" name="id" value="{{$categories->id}}">
         <div class="card">
             <div class="card-header align-items-center d-flex">
-                <h4 class="card-title mb-0 flex-grow-1">Menu Category</h4>
+                <h4 class="card-title mb-0 flex-grow-1">Edit Menu Category</h4>
             </div><!-- end card header -->
 
             <div class="card-body">
                 <div class="live-preview">
                         <div class="col-md-12">
                             <label for="menu_category_name" class="form-label">Category Name</label>
-                            <input type="text" name="menu_category_name" class="form-control" id="menu_category_name" placeholder="Enter Menu Category">
+                            <input type="text" name="menu_category_name" value="{{$categories->menu_category_name}}" class="form-control" id="menu_category_name" placeholder="Enter Menu Category">
                         </div>
                 </div>
             </div>
@@ -68,7 +69,7 @@
 
         <div class="col-12">
             <div class="text-end">
-                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add">
+                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
             </div>
         </div>
         </form>
