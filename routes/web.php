@@ -80,9 +80,17 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     });
 
     // Banner
-    Route::get('/manage/banner', [BannerController::class, 'manageBanner'])->name('manage.banner');
-    Route::get('/add/banner', [BannerController::class, 'AddBanner'])->name('add.banner');
-    Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('banner.store');
+    Route::get('/banner/manage', [BannerController::class, 'manageBanner'])->name('manage.banner');
+
+    Route::get('/banner/add', [BannerController::class, 'AddBanner'])->name('add.banner');
+
+    Route::post('/banner/store', [BannerController::class, 'storeBanner'])->name('store.banner');
+
+    Route::get('/banner/edit/{id}', [BannerController::class, 'editBanner'])->name('edit.banner');
+
+    Route::post('/banner/update', [BannerController::class, 'updateBanner'])->name('update.banner');
+
+    Route::get('/banner/delete/{id}', [BannerController::class, 'deleteBanner'])->name('delete.banner');
 
     // Menu Category
     Route::get('/manage/menu/category', [MenuController::class, 'manageMenuCategory'])->name('manage.menu.category');

@@ -13,7 +13,7 @@
 @slot('title') Edit @endslot
 @endcomponent
 
-<a href="{{route('manage.menu')}}" class="btn btn-secondary btn-animation waves-effect waves-light mb-3" data-text="Add Menu Category"><span>Add Menu</span></a>
+<a href="{{route('manage.menu')}}" class="btn btn-secondary btn-animation waves-effect waves-light mb-3" data-text="Add Menu"><span>Add Menu</span></a>
 
 <div class="row">
 
