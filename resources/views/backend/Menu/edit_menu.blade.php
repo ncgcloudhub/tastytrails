@@ -4,7 +4,7 @@
 @section('content')
 @component('backend.components.breadcrumb')
 @slot('li_1')  Menu @endslot
-@slot('title') Manage @endslot
+@slot('title') Edit @endslot
 @endcomponent
 
 <div class="row">
@@ -57,8 +57,9 @@
 
 
 <div class="col-xxl-6">
-    <form method="POST" action="{{ route('store.menu') }}" class="row g-3" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('update.menu') }}" class="row g-3" enctype="multipart/form-data">
         @csrf
+        <input type="hidden" name="id" value="{{$menu->id}}">
     <div class="card">
         <div class="card-header align-items-center d-flex">
             <h4 class="card-title mb-0 flex-grow-1">Add Menu</h4>
@@ -69,26 +70,29 @@
                 
                     <div class="col-md-12">
                         <select class="form-select" name="menu_category_id" data-choices aria-label="Default select example">
-                            <option selected="">Select Category</option>
+                            <option value="{{$menu->menu_category_id}}" selected>{{$menu->category->menu_category_name}}</option>
                             @foreach($categories as $item)
-                                <option value="{{ $item->id }}">{{ $item->menu_category_name }}</option>
+                                @if($item->id != $menu->menu_category_id)
+                                    <option value="{{ $item->id }}">{{ $item->menu_category_name }}</option>
+                                @endif
                             @endforeach
                         </select>
+                        
                     </div>
 
                     <div class="col-md-12">
                         <label for="item_name" class="form-label">Item Name</label>
-                        <input type="text" name="item_name" class="form-control" id="item_name" placeholder="Enter Item Name">
+                        <input type="text" name="item_name" value="{{$menu->item_name}}" class="form-control" id="item_name" placeholder="Enter Item Name">
                     </div>
 
                     <div class="col-md-12">
                         <label for="description" class="form-label">Short Description</label>
-                        <textarea name="description" class="form-control" id="description" rows="3" placeholder="Enter Short Description"></textarea>
+                        <textarea name="description" class="form-control" value="{{$menu->description}}" id="description" rows="3" placeholder="Enter Short Description">{{$menu->description}}</textarea>
                     </div>
 
                     <div class="col-md-12">
                         <label for="price" class="form-label">Price ($)</label>
-                        <input type="number" step="any" name="price" class="form-control" id="price" placeholder="Enter Price">
+                        <input type="number" step="any" name="price" value="{{$menu->price}}" class="form-control" id="price" placeholder="Enter Price">
                     </div>
                
             </div>
@@ -106,14 +110,14 @@
             <div class="avatar-xl mx-auto">
                 <input type="file" name="image"/>
             </div>
-
+            <img src="{{ asset('storage/' . $menu->image) }}" style="max-width: 100px;">
         </div>
         <!-- end card body -->
     </div>
     {{-- 3rd Card End --}}
     <div class="col-12">
         <div class="text-end">
-            <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Add">
+            <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update">
         </div>
     </div>
 </form>
@@ -124,8 +128,8 @@
 
 @section('script')
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
     <script src="{{ URL::asset('build/js/app.js') }}"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 @endsection

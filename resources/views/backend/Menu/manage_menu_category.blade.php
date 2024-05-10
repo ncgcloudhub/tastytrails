@@ -49,7 +49,7 @@
     </div>
 
     <div class="col-xxl-6">
-        <form method="POST" action="{{ route('menu.category.store') }}" class="row g-3">
+        <form method="POST" action="{{ route('store.menu.category') }}" class="row g-3">
             @csrf
         <div class="card">
             <div class="card-header align-items-center d-flex">

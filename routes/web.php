@@ -86,7 +86,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     // Menu Category
     Route::get('/manage/menu/category', [MenuController::class, 'manageMenuCategory'])->name('manage.menu.category');
 
-    Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory'])->name('menu.category.store');
+    Route::post('/menu/category/store', [MenuController::class, 'storeMenuCategory'])->name('store.menu.category');
 
     Route::get('/menu/category/edit/{id}', [MenuController::class, 'editMenuCategory'])->name('edit.menu.category');
 
@@ -96,7 +96,14 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 
     // Menu
     Route::get('/manage/menu', [MenuController::class, 'manageMenu'])->name('manage.menu');
-    Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
+
+    Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('store.menu');
+
+    Route::get('/menu/edit/{id}', [MenuController::class, 'editMenu'])->name('edit.menu');
+
+    Route::post('/menu/update', [MenuController::class, 'updateMenu'])->name('update.menu');
+
+    Route::get('/menu/delete/{id}', [MenuController::class, 'deleteMenu'])->name('delete.menu');
 }); //End Admin Middleware
 
 
