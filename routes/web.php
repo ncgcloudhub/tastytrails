@@ -102,6 +102,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     // Moderator
     Route::get('/add/moderator', [ModeratorController::class, 'addModerator'])->name('add.moderator');
     Route::post('/moderator/store', [ModeratorController::class, 'storeModerator'])->name('users.store');
+    Route::get('/manage/moderator', [ModeratorController::class, 'ManageModerator'])->name('manage.moderator');
 
 }); //End Admin Middleware
 

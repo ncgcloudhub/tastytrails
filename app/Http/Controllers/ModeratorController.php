@@ -43,4 +43,10 @@ class ModeratorController extends Controller
         // Optionally, you can redirect the user to a different page after creation
         return redirect()->back()->with('success', 'Moderator created successfully!');
     }
+
+    public function manageModerator()
+    {
+        $moderators = User::latest()->get();
+        return view('backend.moderator.manage_moderator', compact('moderators'));
+    }
 }

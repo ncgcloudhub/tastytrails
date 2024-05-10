@@ -115,6 +115,11 @@
                         <i class="las la-image"></i> <span >Moderator</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('manage.moderator')}}">
+                        <i class="las la-image"></i> <span >Manage Moderator</span>
+                    </a>
+                </li>
      
                 <li class="menu-title"><i class="ri-more-fill"></i> <span >Settings</span></li>
                
