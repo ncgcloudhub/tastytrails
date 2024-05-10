@@ -88,7 +88,7 @@
 
                     <div class="col-md-12">
                         <label for="price" class="form-label">Price ($)</label>
-                        <input type="number" step="any" name="price" class="form-control" id="price" placeholder="Enter Price">
+                        <input type="text" name="price" class="form-control" id="price" placeholder="Enter Price">
                     </div>
                
             </div>

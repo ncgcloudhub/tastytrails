@@ -102,7 +102,7 @@ class MenuController extends Controller
             'menu_category_id' => 'required|string',
             'item_name' => 'required|string',
             'description' => 'required|string',
-            'price' => 'required|numeric',
+            'price' => 'nullable|string',
             'image' => 'image',
         ]);
 
@@ -145,7 +145,7 @@ class MenuController extends Controller
             'menu_category_id' => 'required|string',
             'item_name' => 'required|string',
             'description' => 'required|string',
-            'price' => 'required|numeric',
+            'price' => 'nullable|string',
             'image' => 'image',
         ]);
 

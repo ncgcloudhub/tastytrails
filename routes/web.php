@@ -105,7 +105,6 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::post('/menu/update', [MenuController::class, 'updateMenu'])->name('update.menu');
 
     Route::get('/menu/delete/{id}', [MenuController::class, 'deleteMenu'])->name('delete.menu');
-    Route::post('/menu/store', [MenuController::class, 'storeMenu'])->name('menu.store');
 
     // Moderator
     Route::get('/add/moderator', [ModeratorController::class, 'addModerator'])->name('add.moderator');

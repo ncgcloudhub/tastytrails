@@ -33,7 +33,7 @@
                 @foreach ($gallery as $item)
                 <div class="col-sm-12 col-md-4 col-lg-4">
                     <a class="lightbox" href="{{ asset('storage/' . $item->image) }}">
-                        <img class="img-fluid fixed-size" src="{{ asset('storage/' . $item->image) }}" alt="Gallery Images">
+                        <img style="width: 400px; height: 280px;" class="img-fluid fixed-size" src="{{ asset('storage/' . $item->image) }}" alt="Gallery Images">
                     </a>
                 </div>
                 
