@@ -1,10 +1,8 @@
-
 @php
     $menuCategories = \App\Models\MenuCategory::all();
     $menusGroupedByCategory = \App\Models\Menu::with('category')
         ->get()
         ->groupBy('menu_category_id');
-
 @endphp
 
 <div class="menu-box">
@@ -35,18 +33,19 @@
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <div class="row">
                             @foreach ($menusGroupedByCategory as $categoryId => $menus)
-                        @foreach ($menus as $menu)
-                            <div class="col-lg-4 col-md-6 special-grid">
+                            @foreach ($menus as $menu)
+                            <div class="col-lg-3 col-md-6 special-grid">
                                 <div class="gallery-single fix">
-                                    <img src="{{ asset('storage/' . substr($menu->image, 7)) }}" class="img-fluid" alt="{{ $menu->item_name }}">
-                                    <div class="why-text">
-                                        <h4>{{ $menu->item_name }}</h4>
-                                        <p>{{ $menu->description }}</p>
-                                        <h5>${{ $menu->price }}</h5>
+                                    <img style="width: 400px; height: 200px;" src="{{ asset('storage/' . $menu->image) }}" class="img-fluid" alt="{{ $menu->item_name }}">
+                                    <div class="why-text" style="padding: 1px;"> <!-- Decreased padding for more compact layout -->
+                                        <h4 style="font-size: 14px;">{{ $menu->item_name }}</h4> <!-- Further decreased font size for item name -->
+                                        <p style="font-size: 10px;">{{ $menu->description }}</p> <!-- Further decreased font size for description -->
+                                        <h5 style="font-size: 12px;">${{ $menu->price }}</h5> <!-- Further decreased font size for price -->
                                     </div>
                                 </div>
                             </div>
                         @endforeach
+                        
                     @endforeach
                       
                        
@@ -61,11 +60,11 @@
                                 @foreach ($menusGroupedByCategory[$category->id] as $menu)
                                     <div class="col-lg-4 col-md-6 special-grid">
                                         <div class="gallery-single fix">
-                                            <img src="{{ asset('storage/' . substr($menu->image, 7)) }}" class="img-fluid" alt="{{ $menu->item_name }}">
-                                            <div class="why-text">
-                                                <h4>{{ $menu->item_name }}</h4>
-                                                <p>{{ $menu->description }}</p>
-                                                <h5>${{ $menu->price }}</h5>
+                                            <img style="width: 400px; height: 240px;" src="{{ asset('storage/' . $menu->image) }}" class="img-fluid" alt="{{ $menu->item_name }}">
+                                            <div class="why-text" style="padding: 1px;"> <!-- Decreased padding for more compact layout -->
+                                                <h4 style="font-size: 14px;">{{ $menu->item_name }}</h4> <!-- Further decreased font size for item name -->
+                                                <p style="font-size: 12px;">{{ $menu->description }}</p> <!-- Further decreased font size for description -->
+                                                <h5 style="font-size: 12px;">${{ $menu->price }}</h5> <!-- Further decreased font size for price -->
                                             </div>
                                         </div>
                                     </div>
