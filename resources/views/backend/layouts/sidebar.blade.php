@@ -99,10 +99,25 @@
                     </div>
                 </li>
 
-
+               
+                
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="{{route('add.gallery')}}">
                         <i class="las la-image"></i> <span >Gallery</span>
+                    </a>
+                </li>
+
+             
+            
+                {{-- Moderator --}}
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('add.moderator')}}">
+                        <i class="las la-image"></i> <span >Moderator</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('manage.moderator')}}">
+                        <i class="las la-image"></i> <span >Manage Moderator</span>
                     </a>
                 </li>
      

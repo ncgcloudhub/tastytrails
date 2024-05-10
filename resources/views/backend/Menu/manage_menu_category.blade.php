@@ -35,8 +35,11 @@
                             <td>
                                 <div class="hstack gap-3 flex-wrap"> 
                                     <a href="{{ route('edit.menu.category', $item->id) }}" class="fs-15"><i class="ri-edit-2-line"></i></a> 
+                                    
+                                    @if($isAdmin)
                                     <a href="{{ route('delete.menu.category', $item->id) }}" onclick="return confirm('Are you sure you want to delete this Menu Category')" class="link-danger fs-15"><i class="ri-delete-bin-line"></i></a>
-                                   
+                                    @endif
+                                
                                 </div>
                             </td>
                           
