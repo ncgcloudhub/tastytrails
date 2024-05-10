@@ -7,6 +7,9 @@
 @slot('title') Manage @endslot
 @endcomponent
 
+<a href="{{route('manage.menu.category')}}" class="btn btn-secondary btn-animation waves-effect waves-light mb-3" data-text="Add Menu Category"><span>Add Menu Category</span></a>
+
+
 <div class="row">
 
     <div class="col-xxl-6">
