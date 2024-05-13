@@ -104,7 +104,7 @@ class MenuController extends Controller
         $validatedData = $request->validate([
             'menu_category_id' => 'required|string',
             'item_name' => 'required|string',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
             'price' => 'nullable|string',
             'image' => 'image',
         ]);
@@ -147,7 +147,7 @@ class MenuController extends Controller
         $validatedData = $request->validate([
             'menu_category_id' => 'required|string',
             'item_name' => 'required|string',
-            'description' => 'required|string',
+            'description' => 'nullable|string',
             'price' => 'nullable|string',
             'image' => 'image',
         ]);
