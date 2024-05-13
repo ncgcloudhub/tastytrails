@@ -1,5 +1,22 @@
 @include('frontend.common.header')
 
+@php
+    $buttons = [
+        [
+            'text' => 'Menu',
+            'route' => route('menu')
+        ],
+        [
+            'text' => 'Gallery',
+            'route' => route('gallery')
+        ],
+        [
+            'text' => 'Contact Us',
+            'route' => route('contact')
+        ]
+    ];
+@endphp
+
 <body>
 	<!-- Start header -->
 	@include('frontend.common.navbar')
@@ -8,22 +25,21 @@
 	<!-- Start slides -->
 	<div id="slides" class="cover-slides">
 		<ul class="slides-container">
-			@foreach ($banners as $item)
-				
-			<li class="text-left">
-				<img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
-
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<h1 class="m-b-20"><strong>{{$item->title}}</strong></h1>
-							<p class="m-b-40">{{$item->description}}.</p>
-							<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a></p>
+			@foreach ($banners as $key => $item)
+				<li class="text-left">
+					<img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1 class="m-b-20"><strong>{{$item->title}}</strong></h1>
+								<p class="m-b-40">{{$item->description}}.</p>
+								@if(isset($buttons[$key]))
+									<p><a class="btn btn-lg btn-circle btn-outline-new-white" href="{{ $buttons[$key]['route'] }}">{{ $buttons[$key]['text'] }}</a></p>
+								@endif
+							</div>
 						</div>
 					</div>
-				</div>
-			</li>
-		
+				</li>
 			@endforeach
 		</ul>
 		<div class="slides-navigation">

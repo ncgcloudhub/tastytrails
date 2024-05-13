@@ -8,7 +8,7 @@
                 <img src="{{ URL::asset('build/images/logo-sm.png') }}" alt="" height="22">
             </span>
             <span class="logo-lg">
-                <img src="{{ URL::asset('build/images/logo-dark.png') }}" alt="" height="17">
+                <img src="{{ asset('storage/upload/site/' . $siteSettings->logo) }}" alt="" height="50">
             </span>
         </a>
         <!-- Light Logo-->

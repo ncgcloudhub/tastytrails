@@ -8,13 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
  
      <!-- Site Metas -->
-	 <title>Tasty Trails</title>  
+	 <title>{{ $siteSettings->title }}</title>  
     <meta name="keywords" content="">
     <meta name="description" content="">
     <meta name="author" content="">
 
    <!-- Site Icons -->
-<link rel="shortcut icon" href="{{ asset('frontend/images/favicon.png') }}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('storage/upload/site/' . $siteSettings->favicon) }}" type="image/x-icon">
 <link rel="apple-touch-icon" href="{{ asset('frontend/images/apple-touch-icon.png') }}">
 
 <!-- Bootstrap CSS -->

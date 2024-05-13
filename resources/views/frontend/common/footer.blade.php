@@ -6,7 +6,7 @@
                 <div class="overflow-hidden">
                     <h4>Phone</h4>
                     <p class="lead">
-                        +01 123-456-4590
+                        {{$siteSettings->phone }}
                     </p>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <div class="overflow-hidden">
                     <h4>Email</h4>
                     <p class="lead">
-                        yourmail@gmail.com
+                        {{$siteSettings->email }}
                     </p>
                 </div>
             </div>
@@ -24,7 +24,7 @@
                 <div class="overflow-hidden">
                     <h4>Location</h4>
                     <p class="lead">
-                        800, Lorem Street, US
+                        {{$siteSettings->address }}
                     </p>
                 </div>
             </div>
@@ -58,11 +58,9 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3>Contact information</h3>
-                <p class="lead">643 GRANT ST <br>
-                    TASTY TRAILS <br>
-                    BUFFALO, NY, 14213, USA</p>
-                <p class="lead"><a href="#">+01 2000 800 9999</a></p>
-                <p><a href="#"> info@admin.com</a></p>
+                <p class="lead">{{$siteSettings->address }}</p>
+                <p class="lead"><a href="#">{{$siteSettings->phone }}</a></p>
+                <p><a href="#"> {{$siteSettings->email }}</a></p>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3>Opening hours</h3>
@@ -78,9 +76,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p class="company-name">{{ $siteSettings->footer_text }}. &copy; 2024 <a href="#">Tasty Trails
-                    </a> Design By : 
-                TrionxAI</p>
+                    <p class="company-name">{{$siteSettings->footer_text }}</p>
                 </div>
             </div>
         </div>

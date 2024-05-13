@@ -1,5 +1,5 @@
 @extends('backend.layouts.master')
-@section('title') @lang('translation.dashboards') @endsection
+@section('title') Banner Manage @endsection
 
 @section('content')
 @component('backend.components.breadcrumb')

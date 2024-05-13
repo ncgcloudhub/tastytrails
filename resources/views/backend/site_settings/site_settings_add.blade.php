@@ -97,10 +97,6 @@
                     </div>
 
                     <div class="col-md-12">
-                        <label for="footer_text" class="form-label">Footer Text</label>
-                        <input type="text" name="footer_text" class="form-control mb-3" id="footer_text" value="{{$setting->footer_text}}" placeholder="Enter Role">
-                    </div>
-                    <div class="col-md-12">
                         <label for="address" class="form-label">Address</label>
                         <input type="text" name="address" class="form-control mb-3" id="address" value="{{$setting->address}}" placeholder="Enter Address">
                     </div>
