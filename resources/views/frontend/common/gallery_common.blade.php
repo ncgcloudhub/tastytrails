@@ -37,9 +37,13 @@
                     </a>
                 </div>
                 
-                
                 @endforeach
             </div>
+           
         </div>
+        <div class="text-center">
+            <a class="btn btn-lg btn-circle btn-outline-new-white" href="{{route('gallery')}}">Show More</a>
+          </div>
+          
     </div>
 </div>
