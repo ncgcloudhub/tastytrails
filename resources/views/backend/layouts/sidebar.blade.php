@@ -110,15 +110,29 @@
              
             
                 {{-- Moderator --}}
+
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('add.moderator')}}">
-                        <i class="las la-image"></i> <span >Moderator</span>
+                    <a class="nav-link menu-link" href="#moderator" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="AITools">
+                        <i class=" las la-user-tie"></i> <span >Moderator</span>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="{{route('manage.moderator')}}">
-                        <i class="las la-image"></i> <span >Manage Moderator</span>
-                    </a>
+                    <div class="collapse menu-dropdown mega-dropdown-menu" id="moderator">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <ul class="nav nav-sm flex-column">
+                                    <li class="nav-item">
+                                        <a href="{{route('add.moderator')}}" class="nav-link" >Add Moderator</a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{route('manage.moderator')}}" class="nav-link" >Manage Moderator</a>
+                                    </li>
+                
+                                </ul>
+                            </div>
+                           
+                        </div>
+                    </div>
                 </li>
      
                 <li class="menu-title"><i class="ri-more-fill"></i> <span >Settings</span></li>
