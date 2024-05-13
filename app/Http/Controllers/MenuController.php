@@ -20,6 +20,7 @@ class MenuController extends Controller
     {
         $validatedData = $request->validate([
             'menu_category_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
         ]);
 
         $menu_category = new MenuCategory();

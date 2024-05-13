@@ -79,25 +79,75 @@
 
 {{-- FULL MENU --}}
 <div class="tab-pane fade" id="v-pills-full-menu" role="tabpanel" aria-labelledby="v-pills-full-menu-tab">
-    <div class="row">
+
+    <ul class="nav nav-pills mb-3" id="v-pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="v-pills-table-tab" data-toggle="pill" href="#v-pills-table" role="tab" aria-controls="v-pills-table" aria-selected="true"> Table View</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="v-pills-full-menu-tab" data-toggle="pill" href="#v-pills-full-menus" role="tab" aria-controls="v-pills-full-menus" aria-selected="false">Grid View</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="v-pills-tabContent">
+        <!-- Tab 1: Menu Table -->
+        <div class="tab-pane fade show active" id="v-pills-table" role="tabpanel" aria-labelledby="v-pills-table-tab">
+            <!-- Place your table code here -->
+          <!-- Place your table code here -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Item Name</th>
+            <th>Description</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
         @foreach ($menusGroupedByCategory as $categoryId => $menus)
             @php
                 $categoryName = \App\Models\MenuCategory::findOrFail($categoryId)->menu_category_name;
+                $description = \App\Models\MenuCategory::findOrFail($categoryId)->description;
             @endphp
-            <div class="col-12 mt-4">
-                <h2 class="text-danger" style="font-size: 1.5rem;">{{ $categoryName }}</h2>
-            </div>
+            <tr>
+                <td colspan="4" class="bg-secondary text-white">{{ $categoryName }} ({{$description}})</td>
+            </tr>
             @foreach ($menus as $menu)
-                <div class="col-lg-4 col-md-6 mt-3">
-                    <div class="special-grid">
-                        <h4>{{ $menu->item_name }}</h4>
-                        <p>{{ $menu->description }}</p>
-                        <h5 class="text-info"><b>${{ $menu->price }}</b></h5>   
-                    </div>
-                </div>
+                <tr>
+                    <td></td>
+                    <td><h4>{{ $menu->item_name }}</h4></td>
+                    <td>{{ $menu->description }}</td>
+                    <td class="text-info">${{ $menu->price }}</td>
+                </tr>
             @endforeach
         @endforeach
+    </tbody>
+</table>
+
+        </div>
+        <!-- Tab 2: Full Menu -->
+        <div class="tab-pane fade" id="v-pills-full-menus" role="tabpanel" aria-labelledby="v-pills-full-menu-tab">
+            <div class="row">
+                @foreach ($menusGroupedByCategory as $categoryId => $menus)
+                    @php
+                        $categoryName = \App\Models\MenuCategory::findOrFail($categoryId)->menu_category_name;
+                    @endphp
+                    <div class="col-12 mt-4">
+                        <h2 class="text-danger" style="font-size: 1.5rem;">{{ $categoryName }}</h2>
+                    </div>
+                    @foreach ($menus as $menu)
+                        <div class="col-lg-4 col-md-6 mt-3">
+                            <div class="special-grid">
+                                <h4>{{ $menu->item_name }}</h4>
+                                <p>{{ $menu->description }}</p>
+                                <h5 class="text-info"><b>${{ $menu->price }}</b></h5>   
+                            </div>
+                        </div>
+                    @endforeach
+                @endforeach
+            </div>
+        </div>
     </div>
+    
 </div>
 {{-- FULL MENU END --}}
 
