@@ -109,10 +109,11 @@
                 $description = \App\Models\MenuCategory::findOrFail($categoryId)->description;
             @endphp
             <tr>
-                <td colspan="4" class="bg-secondary text-white">{{ $categoryName }} ({{$description}})</td>
+                <td><h3>{{ $categoryName }}</h3> </td>
+                <td colspan="4" class="bg-secondary text-white">{{$description}}</td>
             </tr>
             @foreach ($menus as $menu)
-                <tr>
+                <tr> 
                     <td></td>
                     <td><h4>{{ $menu->item_name }}</h4></td>
                     <td>{{ $menu->description }}</td>

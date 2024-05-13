@@ -10,6 +10,7 @@ use App\Http\Controllers\AboutUsController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ModeratorController;
+use App\Http\Controllers\ProfileEditController;
 use App\Models\MenuCategory;
 use Illuminate\Support\Facades\Route;
 
@@ -118,6 +119,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/add/moderator', [ModeratorController::class, 'addModerator'])->name('add.moderator');
     Route::post('/moderator/store', [ModeratorController::class, 'storeModerator'])->name('users.store');
     Route::get('/manage/moderator', [ModeratorController::class, 'ManageModerator'])->name('manage.moderator');
+
+    // ProfileController
+    Route::get('/password/change', [ProfileEditController::class, 'ProfileEdit'])->name('edit.profile');
 }); //End Admin Middleware
 
 
