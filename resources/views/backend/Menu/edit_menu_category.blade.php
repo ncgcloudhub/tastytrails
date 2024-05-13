@@ -73,7 +73,15 @@
                             <input type="text" name="menu_category_name" value="{{$categories->menu_category_name}}" class="form-control" id="menu_category_name" placeholder="Enter Menu Category">
                         </div>
                 </div>
+
+                <div class="live-preview">
+                    <div class="col-md-12">
+                        <label for="description" class="form-label">Category Description</label>
+                        <input type="text" name="description" value="{{$categories->description}}" class="form-control" id="description" placeholder="Enter Menu Description">
+                    </div>
+                </div>
             </div>
+        
         </div>
 
         <div class="col-12">

@@ -45,6 +45,7 @@ class MenuController extends Controller
         // Validate the incoming request data
         $validatedData = $request->validate([
             'menu_category_name' => 'required|string|max:255',
+            'description' => 'nullable|string',
         ]);
 
         // Find the about us record to update
@@ -52,6 +53,7 @@ class MenuController extends Controller
 
         // Update the text fields
         $menu_category->menu_category_name = $validatedData['menu_category_name'];
+        $menu_category->description = $validatedData['description'];
 
         // Save the changes to the about us record
         $menu_category->save();
