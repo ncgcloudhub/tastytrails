@@ -42,8 +42,9 @@
             <div class="col-lg-3 col-md-6">
                 <h3>Subscribe</h3>
                 <div class="subscribe_form">
-                    <form class="subscribe_form">
-                        <input name="EMAIL" id="subs-email" class="form_input" placeholder="Email Address..." type="email">
+                    <form action="{{ route('newsletter.store') }}" method="POST">
+                        @csrf
+                        <input name="email" id="email" class="form_input" placeholder="Email Address..." type="email">
                         <button type="submit" class="submit">SUBSCRIBE</button>
                         <div class="clearfix"></div>
                     </form>

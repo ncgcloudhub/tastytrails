@@ -166,6 +166,12 @@
                         </div>
                     </div>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="{{route('newsletter.view')}}">
+                        <i class=" las la-newspaper"></i> <span >Newsletter</span>
+                    </a>
+                </li>
     
          </ul>
         </div>

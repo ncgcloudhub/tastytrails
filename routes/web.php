@@ -140,3 +140,8 @@ Route::get('google/callback', [UserController::class, 'callbackHandel'])->name('
 
 //Contact Us Send Mail
 Route::post('/send-email', [FrontEndController::class, 'sendEmail'])->name('send.email');
+
+// Newsletter Store for all users even without login
+Route::post('/newsletter/store', [FrontEndController::class, 'NewsLetterStore'])->name('newsletter.store');
+
+Route::get('/newsletter/view', [FrontEndController::class, 'NewsLetterManage'])->name('newsletter.view');
