@@ -137,3 +137,6 @@ Route::middleware(['auth', 'role:user'])->group(function () {
 // GOOGLE SOCIALITE
 Route::get('google/login', [UserController::class, 'provider'])->name('google.login');
 Route::get('google/callback', [UserController::class, 'callbackHandel'])->name('google.login.callback');
+
+//Contact Us Send Mail
+Route::post('/send-email', [FrontEndController::class, 'sendEmail'])->name('send.email');

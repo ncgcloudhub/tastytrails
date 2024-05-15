@@ -13,7 +13,7 @@
                     <h1>Welcome To <span>{{$about_us->header_title}}</span></h1>
                    
                     <p>{!!$about_us->details!!}</p>
-                    <a class="btn btn-lg btn-circle btn-outline-new-white" href="#">Reservation</a>
+                    <a class="btn btn-lg btn-circle btn-outline-new-white" href="{{route('menu')}}">Checkout Menu</a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-12">
