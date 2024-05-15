@@ -85,7 +85,8 @@ class FrontEndController extends Controller
         ];
 
         Mail::send('backend.newsletter.newsletter_email', $data, function ($message) use ($data) {
-            $message->to('ifazalam9@gmail.com')
+            $message->from('no-reply@clevercreator.ai', 'Tasty Trails'); // Make sure the domain matches your MAIL_FROM_ADDRESS
+            $message->to('tastytrails643@gmail.com')
                 ->subject('New Newsletter Subscription'); // Use a static subject or another field, not the message body
         });
 
