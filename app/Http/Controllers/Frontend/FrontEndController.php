@@ -62,6 +62,7 @@ class FrontEndController extends Controller
         ];
 
         Mail::send('backend.layouts.email_test', $data, function ($message) use ($data) {
+            $message->from('no-reply@clevercreator.ai', 'Tasty Trails'); // Make sure the domain matches your MAIL_FROM_ADDRESS
             $message->to('ifazalam9@gmail.com')
                 ->subject('New message from contact form'); // Use a static subject or another field, not the message body
         });
@@ -86,7 +87,7 @@ class FrontEndController extends Controller
 
         Mail::send('backend.newsletter.newsletter_email', $data, function ($message) use ($data) {
             $message->from('no-reply@clevercreator.ai', 'Tasty Trails'); // Make sure the domain matches your MAIL_FROM_ADDRESS
-            $message->to('tastytrails643@gmail.com')
+            $message->to('ifazalam9@gmail.com')
                 ->subject('New Newsletter Subscription'); // Use a static subject or another field, not the message body
         });
 

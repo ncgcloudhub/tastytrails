@@ -34,9 +34,9 @@
                         <div class="row">
                             @foreach ($menusGroupedByCategory as $categoryId => $menus)
                             @foreach ($menus as $menu)
-                            <div class="col-lg-3 col-md-6 special-grid">
+                            <div class="col-lg-3 col-md-6 col-sm-6 col-6 mb-4 special-grid">
                                 <div class="gallery-single fix">
-                                    <img style="width: 400px; height: 200px;" src="{{ asset('storage/' . $menu->image) }}" class="img-fluid" alt="{{ $menu->item_name }}">
+                                    <img style="width: 100%; max-width: 400px; height: 200px; object-fit: cover;" src="{{ asset('storage/' . $menu->image) }}" class="img-fluid" alt="{{ $menu->item_name }}">
                                     <div class="why-text" style="padding: 1px;"> <!-- Decreased padding for more compact layout -->
                                         <h4 style="font-size: 14px;">{{ $menu->item_name }}</h4> <!-- Further decreased font size for item name -->
                                         <p style="font-size: 10px;">{{ $menu->description }}</p> <!-- Further decreased font size for description -->
@@ -93,38 +93,42 @@
         <div class="tab-pane fade show active" id="v-pills-table" role="tabpanel" aria-labelledby="v-pills-table-tab">
             <!-- Place your table code here -->
           <!-- Place your table code here -->
-<table class="table">
-    <thead>
-        <tr>
-            <th>Category</th>
-            <th>Item Name</th>
-            <th>Description</th>
-            <th>Price</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($menusGroupedByCategory as $categoryId => $menus)
-            @php
-                $categoryName = \App\Models\MenuCategory::findOrFail($categoryId)->menu_category_name;
-                $description = \App\Models\MenuCategory::findOrFail($categoryId)->description;
-            @endphp
+
+<div class="card-body">
+    <table id="alternative-pagination" class="table responsive align-middle table-hover table-bordered" style="width:100%">
+        <thead>
             <tr>
-                <td><h3>{{ $categoryName }}</h3> </td>
-                <td colspan="4" class="bg-secondary text-white">{{$description}}</td>
+                <th>Category</th>
+                <th>Item Name</th>
+                <th>Description</th>
+                <th>Price</th>
             </tr>
-            @foreach ($menus as $menu)
-                <tr> 
-                    <td></td>
-                    <td><h4>{{ $menu->item_name }}</h4></td>
-                    <td>{{ $menu->description }}</td>
-                    <td class="text-info">${{ $menu->price }}</td>
+        </thead>
+        <tbody>
+            @foreach ($menusGroupedByCategory as $categoryId => $menus)
+                @php
+                    $categoryName = \App\Models\MenuCategory::findOrFail($categoryId)->menu_category_name;
+                    $description = \App\Models\MenuCategory::findOrFail($categoryId)->description;
+                @endphp
+                <tr>
+                    <td><h3>{{ $categoryName }}</h3> </td>
+                    <td colspan="4" class="bg-secondary text-white">{{$description}}</td>
                 </tr>
+                @foreach ($menus as $menu)
+                    <tr>
+                        <td></td>
+                        <td><h4>{{ $menu->item_name }}</h4></td>
+                        <td>{{ $menu->description }}</td>
+                        <td class="text-info">${{ $menu->price }}</td>
+                    </tr>
+                @endforeach
             @endforeach
-        @endforeach
-    </tbody>
-</table>
+        </tbody>
+    </table>
+</div>
 
         </div>
+        <!-- Tab 2: Full Menu -->
         <!-- Tab 2: Full Menu -->
         <div class="tab-pane fade" id="v-pills-full-menus" role="tabpanel" aria-labelledby="v-pills-full-menu-tab">
             <div class="row">
@@ -137,10 +141,12 @@
                     </div>
                     @foreach ($menus as $menu)
                         <div class="col-lg-4 col-md-6 mt-3">
-                            <div class="special-grid">
-                                <h4>{{ $menu->item_name }}</h4>
-                                <p>{{ $menu->description }}</p>
-                                <h5 class="text-info"><b>${{ $menu->price }}</b></h5>   
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4>{{ $menu->item_name }}</h4>
+                                    <p>{{ $menu->description }}</p>
+                                    <h5 class="text-info"><b>${{ $menu->price }}</b></h5>   
+                                </div>
                             </div>
                         </div>
                     @endforeach
