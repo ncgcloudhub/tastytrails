@@ -102,6 +102,16 @@
                     </div>
 
                     <div class="col-md-12">
+                        <label for="footer_aboutus" class="form-label">Footer About Us</label>
+                        <textarea type="text" name="footer_aboutus" class="form-control mb-3" id="footer_aboutus" value="{{$setting->footer_aboutus}}" placeholder="Enter Character Name">{{$setting->footer_aboutus}}</textarea>
+                    </div>
+
+                    <div class="col-md-12 mb-3">
+                        <label class="form-label">Opening Hours</label>
+                        <textarea name="opening_hours" value="{{$setting->opening_hours}}" class="form-control" id="tinymceExample" rows="30">{{$setting->opening_hours}}</textarea>
+                    </div>
+
+                    <div class="col-md-12">
                         <label for="facebook" class="form-label">Facebook</label>
                         <input type="text" name="facebook" class="form-control mb-3" id="facebook" placeholder="Enter Role">
                     </div>
@@ -125,6 +135,8 @@
                         <label for="twitter" class="form-label">Twitter</label>
                         <input type="text" name="twitter" class="form-control mb-3" id="twitter" placeholder="Enter Role">
                     </div>
+
+                   
                
             </div>
         </div>

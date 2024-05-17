@@ -37,7 +37,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <h3>About Us</h3>
-                <p>From sizzling fajitas to melt-in-your-mouth pasta, embark on a culinary adventure at Tasty Trails. Your next favorite dish awaits.</p>
+                <p>{{$siteSettings->footer_aboutus }}</p>
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3>Subscribe</h3>
@@ -65,10 +65,7 @@
             </div>
             <div class="col-lg-3 col-md-6">
                 <h3>Opening hours</h3>
-                <p><span class="text-color">Monday: </span>Closed</p>
-                <p><span class="text-color">Tue-Wed :</span> 9:Am - 10PM</p>
-                <p><span class="text-color">Thu-Fri :</span> 9:Am - 10PM</p>
-                <p><span class="text-color">Sat-Sun :</span> 5:PM - 10PM</p>
+                <p>{!!$siteSettings->opening_hours!!}</p>
             </div>
         </div>
     </div>

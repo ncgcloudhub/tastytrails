@@ -119,7 +119,7 @@
                         <td></td>
                         <td><h4>{{ $menu->item_name }}</h4></td>
                         <td>{{ $menu->description }}</td>
-                        <td style="width: 15%" class="text-info">{{ $menu->price }}</td>
+                        <td style="width: 17%" class="text-info">{{ $menu->price }}</td>
                     </tr>
                 @endforeach
             @endforeach

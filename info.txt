@@ -1,0 +1,1 @@
+add 2 more fields in site settings table: footer_aboutus and opening_hours (editor box)
