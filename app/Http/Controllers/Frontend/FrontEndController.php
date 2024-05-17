@@ -72,27 +72,36 @@ class FrontEndController extends Controller
 
     public function NewsLetterStore(Request $request)
     {
-
         // Insert user's subscription details into the database
         $NewsLetter = NewsLetter::insertGetId([
             'email' => $request->email,
             'created_at' => now(),
         ]);
 
-        $data = [
-
+        // Send email to admin
+        $adminData = [
             'email' => $request->input('email'),
-
         ];
 
-        Mail::send('backend.newsletter.newsletter_email', $data, function ($message) use ($data) {
-            $message->from('no-reply@clevercreator.ai', 'Tasty Trails'); // Make sure the domain matches your MAIL_FROM_ADDRESS
+        Mail::send('backend.newsletter.newsletter_email', $adminData, function ($message) use ($adminData) {
+            $message->from('no-reply@clevercreator.ai', 'Tasty Trails');
             $message->to('ifazalam9@gmail.com')
-                ->subject('New Newsletter Subscription'); // Use a static subject or another field, not the message body
+                ->subject('New Newsletter Subscription');
+        });
+
+        // Send confirmation email to the subscriber
+        $subscriberData = [
+            'email' => $request->input('email'),
+        ];
+
+        Mail::send('backend.newsletter.confirmation_email', $subscriberData, function ($message) use ($subscriberData) {
+            $message->from('no-reply@clevercreator.ai', 'Tasty Trails');
+            $message->to($subscriberData['email'])
+                ->subject('Thank You for Subscribing');
         });
 
         return redirect()->back()->with('success', 'Subscribed Successfully');
-    } // end method
+    }
 
     public function NewsLetterManage()
     {
